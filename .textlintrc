@@ -1,0 +1,8 @@
+rules:
+  general-novel-style-ja:
+    chars_leading_paragraph: false
+  ja-no-redundant-expression: true
+  no-dead-link: false
+  preset-ja-technical-writing: true
+  preset-jtf-style: true
+  spellcheck-tech-word: false

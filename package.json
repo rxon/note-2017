@@ -1,0 +1,39 @@
+{
+  "name": "note-2017",
+  "version": "0.1.0",
+  "description": "rxon's blog",
+  "license": "MIT",
+  "repository": "rxon/note-2017",
+  "author": {
+    "name": "rxon",
+    "url": "rxon.github.io"
+  },
+  "scripts": {
+    "start": "",
+    "build": "",
+    "deploy": "",
+    "lint": "",
+    "test": ""
+  },
+  "xo": {
+    "esnext": true,
+    "space": true
+  },
+  "devDependencies": {
+    "textlint": "^7.1.4",
+    "textlint-rule-general-novel-style-ja": "^1.3.0",
+    "textlint-rule-ja-no-redundant-expression": "^1.0.1",
+    "textlint-rule-no-dead-link": "^3.0.1",
+    "textlint-rule-preset-ja-technical-writing": "^1.0.0",
+    "textlint-rule-preset-jtf-style": "2.2.3",
+    "textlint-rule-spellcheck-tech-word": "5.0.0",
+    "xo": "0.17.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "glob": "^7.1.1",
+    "highlight.js": "^9.8.0",
+    "marked": "^0.3.6",
+    "pug": "^2.0.0-beta6"
+  }
+}
