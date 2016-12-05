@@ -1,8 +1,9 @@
+---
 title: webpack.config.jsに関する知見、5選
 description: 休日を粉砕して手に入れた知見です
 date: 2016-11-25
 draft: true
---
+---
 # webpack.config.jsに関する知見、5選
 
 勤労感謝の日の前日の29時までと当日の27時までの時間を使って[rxon/rxon.github.io](https://github.com/rxon/rxon.github.io)のタスクランナーをgulpからwebpack + npm run-scriptに書き換える作業を行い、そこそこの知見が得られたので書く。

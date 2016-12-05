@@ -9,10 +9,10 @@
     "url": "rxon.github.io"
   },
   "scripts": {
-    "start": "",
+    "start": "node note.js",
     "build": "",
     "deploy": "",
-    "lint": "",
+    "lint": "xo",
     "test": ""
   },
   "xo": {
@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "glob": "^7.1.1",
     "highlight.js": "^9.8.0",
     "marked": "^0.3.6",
+    "meta-marked": "^0.4.2",
     "pug": "^2.0.0-beta6"
   }
 }
