@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+  <ul>
+    <% postList.forEach(function(post){%>
+      <li>
+        <a href="<%= post.url %>"><%= post.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>

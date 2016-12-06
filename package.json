@@ -30,10 +30,10 @@
     "xo": "0.17.1"
   },
   "dependencies": {
+    "ejs": "^2.5.4",
     "express": "^4.14.0",
     "highlight.js": "^9.8.0",
     "marked": "^0.3.6",
-    "meta-marked": "^0.4.2",
-    "pug": "^2.0.0-beta6"
+    "meta-marked": "^0.4.2"
   }
 }

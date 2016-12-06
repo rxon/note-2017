@@ -2,7 +2,6 @@
 title: webpack.config.jsに関する知見、5選
 description: 休日を粉砕して手に入れた知見です
 date: 2016-11-25
-draft: true
 ---
 # webpack.config.jsに関する知見、5選
 
