@@ -2,7 +2,7 @@ rules:
   # 冗長な表現を禁止
   ja-no-redundant-expression: true
   # リンクが有効か確認　
-  no-dead-link: false
+  no-dead-link: true
 
   # 技術文書向けのtextlintルールプリセット
   preset-ja-technical-writing:
@@ -11,6 +11,7 @@ rules:
     # カンマは1文中に3つまで
     # 読点は1文中に3つまで
     # 連続できる最大の漢字長は5文字まで
+    max-kanji-continuous-len: false
     # 漢数字と算用数字を使い分けます
     # 「ですます調」、「である調」を統一します
     no-mix-dearu-desumasu:
@@ -38,4 +39,4 @@ rules:
   # JTF日本語標準スタイルガイド
   preset-jtf-style: true
   # tech word checking for web engineer
-  spellcheck-tech-word: false
+  spellcheck-tech-word: true
