@@ -1,8 +1,14 @@
 rules:
+  # headerの階層チェック
+  incremental-headers: true
   # 冗長な表現を禁止
   ja-no-redundant-expression: true
   # リンクが有効か確認　
   no-dead-link: true
+  # JTF日本語標準スタイルガイド
+  preset-jtf-style: true
+  # tech word checking for web engineer
+  spellcheck-tech-word: false
 
   # 技術文書向けのtextlintルールプリセット
   preset-ja-technical-writing:
@@ -35,8 +41,3 @@ rules:
     # 弱い日本語表現の利用を使用しない
     # 同一の単語を間違えて連続しているのをチェックする
     # よくある日本語の誤用をチェックする
-
-  # JTF日本語標準スタイルガイド
-  preset-jtf-style: true
-  # tech word checking for web engineer
-  spellcheck-tech-word: true
