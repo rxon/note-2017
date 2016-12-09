@@ -1,7 +1,3 @@
----
-title: MAKE 游ゴシック クロスプラットフォーム AGAIN
-description:
-date: 
----
-#
+# MAKE游ゴシッククロスプラットフォームAGAIN
+
 > これはステマ記事です
