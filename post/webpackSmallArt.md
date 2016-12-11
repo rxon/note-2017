@@ -1,8 +1,10 @@
 # webpack.config.jsに関する知見、5選
 
+<time datetime="2016-12-10">2016-12-10</time>
+
 > 休日を粉砕して手に入れた知見です
 
-勤労感謝の日の前日の29時までと当日の27時までの時間を使って[rxon/rxon.github.io](https://github.com/rxon/rxon.github.io)のタスクランナーをgulpからwebpack + npm run-scriptに書き換える作業を行い、そこそこの知見が得られたので書く。
+祝日の前日の29時までと当日の27時までの時間を使って[rxon/rxon.github.io](https://github.com/rxon/rxon.github.io)のタスクランナーをgulpからwebpack + npm run-scriptに書き換える作業を行い、そこそこの知見が得られたので書く。
 
 ## extract-text-webpack-plugin
 

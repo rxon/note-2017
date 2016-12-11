@@ -1,7 +1,7 @@
 {
   "name": "note-2017",
   "version": "0.1.0",
-  "description": "rxon's blog",
+  "description": "rxon's miniminimal blog",
   "license": "MIT",
   "repository": "rxon/note-2017",
   "author": {
@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "node note.js",
-    "lint": "xo note.js --fix",
+    "lint:js": "xo note.js",
+    "lint:md": "shx find post/*.md | xargs textlint",
     "test": "",
     "deploy": ""
   },
@@ -19,6 +20,7 @@
     "space": true
   },
   "devDependencies": {
+    "shx": "^0.2.1",
     "textlint": "^7.1.4",
     "textlint-rule-incremental-headers": "^0.2.0",
     "textlint-rule-ja-no-redundant-expression": "^1.0.1",

@@ -10,60 +10,62 @@ const marked = require('marked');
 const mustache = require('mustache');
 
 const app = express();
-const mdDir = path.join(__dirname, '/post/');
-const viewsDir = path.join(__dirname, '/views/');
+const config = {
+  mdDir: path.join(__dirname, '/post/'),
+  viewsDir: path.join(__dirname, '/views/'),
+  staticDir: path.join(__dirname, '/public/')
+};
 
 app.engine('mustache', mustache);
-app.set('views', viewsDir);
 app.set('view engine', 'mustache');
+app.set('views', config.viewsDir);
 
-function listUpPost(req, res, next) {
+app.use(express.static(config.staticDir));
+
+function getPostInfo(mdName, withHtml) {
   return new Promise((resolve, reject) => {
-    fs.readdir(mdDir, (err, mdFiles) => {
+    fs.readFile(config.mdDir + mdName, 'utf-8', (err, md) => {
       if (err) {
-        throw new Error('Failed to read mdDir');
+        return reject(err);
       }
-      const postList = [];
-      for (let i = 0; i < mdFiles.length; i++) {
-        fs.readFile(mdDir + mdFiles[i], 'utf-8', (err, md) => {
-          if (err) {
-            throw new Error('Failed to read md file: ' + mdFiles[i]);
-          }
-          const postTitle = md.match(/^\#\s(.)+\n/)[0].match(/[^#\n\s]+/);
-          const postDescription = md.match(/\n\>(.)+\n/)[0].match(/[^>\n\s]+/);
-          postList.push({
-            title: postTitle[0],
-            description: postDescription[0],
-            url: mdFiles[i]
-          });
-          console.log(postList);
-          req.postList = postList;
-        });
-      }
+
+      const postTitle = md.match(/^#\s(.)+\n/)[0].match(/[^#\n\s]+/);
+      const postDescription = md.match(/\n>(.)+\n/)[0].match(/[^>\n\s]+/);
+      const postDate = md.match(/\d{4}-\d{2}-\d{2}/);
+
+      marked.setOptions({
+        gfm: true,
+        highlight(code) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+
+      resolve({
+        title: postTitle[0],
+        description: postDescription[0],
+        date: postDate[0],
+        url: mdName,
+        html: withHtml ? marked(md) : null
+      });
     });
   });
-  next();
 }
 
-function readMd(mdPath) {
-  return function (req, res, next) {
-    fs.readFile(mdPath, 'utf-8', (err, md) => {
-      if (err) {
-        throw new Error('Failed to read md file: ' + mdPath);
-      }
-      req.contents = marked(md);
-      next();
-    });
-  };
-}
+app.get('/', (req, res) => {
+  fs.readdir(config.mdDir, (err, mdFiles) => {
+    if (err) {
+      throw new Error('Failed to read mdDir');
+    }
+    const postInfoList = [];
+    for (let i = 0; i < mdFiles.length; i++) {
+      getPostInfo.then(list => {
+        postInfoList.push(list);
+      });
+    }
+  });
 
-app.get('/', listUpPost, (req, res) => {
-  // listUpPost().then(postList => {
-  //   // req.postList = postList;
-  //   console.log(postList);
-  //   res.send(req.postList);
-  // });
-  res.send(req.postList);
+  // res.send(req.postList);
+
   // res.render('index', {
   //   locals: {
   //     postList: {
@@ -81,32 +83,11 @@ app.get('/', listUpPost, (req, res) => {
   // });
 });
 
-marked.setOptions({
-  gfm: true,
-  highlight(code) {
-    return hljs.highlightAuto(code).value;
-  }
-});
-
 app.get('/:post.md', (req, res) => {
   const file = path.format({
-    dir: mdDir,
+    dir: config.mdDir,
     name: req.params.post,
     ext: '.md'
-  });
-
-  // res.send(req.contents.html);
-  fs.readFile(file, 'utf-8', (err, md) => {
-    if (err) {
-      throw new Error('Failed to read md: ' + file);
-    }
-    marked(md, (err, html) => {
-      if (err) {
-        throw new Error('Failed to compile md to html');
-      }
-      res.send(html);
-    });
-    // marked(contents);
   });
 });
 
