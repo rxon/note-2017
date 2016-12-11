@@ -35,6 +35,7 @@
     "highlight.js": "^9.8.0",
     "lodash": "^4.17.2",
     "marked": "^0.3.6",
-    "mustache": "^2.3.0"
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.4"
   }
 }

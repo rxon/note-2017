@@ -7,7 +7,8 @@ const express = require('express');
 const hljs = require('highlight.js');
 const _ = require('lodash');
 const marked = require('marked');
-const mustache = require('mustache');
+// mustache-expressあんま使いたくない
+const mustache = require('mustache-express');
 
 const app = express();
 const config = {
@@ -16,7 +17,7 @@ const config = {
   staticDir: path.join(__dirname, '/public/')
 };
 
-app.engine('mustache', mustache);
+app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
 app.set('views', config.viewsDir);
 
@@ -54,42 +55,56 @@ function getPostInfo(mdName, withHtml) {
 app.get('/', (req, res) => {
   fs.readdir(config.mdDir, (err, mdFiles) => {
     if (err) {
-      throw new Error('Failed to read mdDir');
+      throw err;
     }
-    const postInfoList = [];
+    const postsInfo = [];
     for (let i = 0; i < mdFiles.length; i++) {
-      getPostInfo.then(list => {
-        postInfoList.push(list);
-      });
+      getPostInfo(mdFiles[i], false)
+        .then(postInfo => {
+          postsInfo.push(postInfo);
+          if (i === mdFiles.length - 1) {
+            // postsInfoをdateでsort
+            res.render('layout', {
+              postList: postsInfo,
+              head: {
+                title: '',
+                url: '',
+                description: '',
+                fbimg: 'hoge.jpg',
+                twimg: 'hoge.jpg',
+                twaccount: '@hogehoge'
+              }
+            });
+          }
+        });
     }
   });
-
-  // res.send(req.postList);
-
-  // res.render('index', {
-  //   locals: {
-  //     postList: {
-  //       title: req.contents.meta.title,
-  //       url: req.filename
-  //     }
-  //     // head.title
-  //     // head.description
-  //     // head.url
-  //     // head.fbimg
-  //     // head.twimg
-  //     // head.twaccount
-  //   }
-  //
-  // });
 });
 
 app.get('/:post.md', (req, res) => {
   const file = path.format({
-    dir: config.mdDir,
     name: req.params.post,
     ext: '.md'
   });
+  getPostInfo(file, true).then(postInfo => {
+    res.render('layout', {
+      postList: false,
+      head: {
+        title: postInfo.title,
+        url: postInfo.url,
+        description: postInfo.description,
+        fbimg: 'hoge.jpg',
+        twimg: 'hoge.jpg',
+        twaccount: '@hogehoge'
+      },
+      post: {
+        contents: postInfo.html
+      }
+    });
+  });
 });
 
-app.listen(3000);
-console.log('Running on http://localhost:3000');
+if (!module.parent) {
+  app.listen(3000);
+  console.log('Express started on http://localhost:3000');
+}
