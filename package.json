@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node note.js",
-    "lint:js": "xo note.js",
+    "lint:js": "xo",
     "lint:md": "shx find post/*.md | xargs textlint",
     "lint": "npm run lint:md & npm run lint:js",
     "test": "",
@@ -18,7 +18,8 @@
   },
   "xo": {
     "esnext": true,
-    "space": true
+    "space": true,
+    "env": ["node", "browser"]
   },
   "devDependencies": {
     "shx": "^0.2.1",

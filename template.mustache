@@ -27,7 +27,6 @@
     <link href="{{icon}}" rel="image_src">
     <link href="{{icon}}" rel="icon" type="image/png">
     <link href="{{icon}}" rel="apple-touch-icon">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -42,19 +41,10 @@
         text-rendering: optimizeLegibility;
       }
 
-      header,
-      footer {
-        text-align: center;
-      }
-
-      nav ul li {
-        list-style: none;
-      }
-
       pre {
         font-size: .9em;
         line-height: 1.6em;
-        overflow-x: scroll;
+        overflow-x: auto;
         width: 100%;
         padding: 1em;
         white-space: pre;
@@ -68,14 +58,40 @@
       }
 
       blockquote {
-        font-weight: bold;
         margin-left: 0;
         padding: 0 1em;
         color: #777;
         border-left: .5em solid #ddd;
       }
+
+      header,
+      footer,
+      .postlist {
+        text-align: center;
+      }
+
+      footer {
+        font-size: 0.9em;
+        margin-top: 5em;
+      }
+
+      address ul,
+      .postlist ul {
+        padding: 0;
+      }
+
+      .postlist ul li,
+      address ul li {
+        list-style: none;
+      }
+
+      address ul li {
+        display: inline-block;
+      }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/github-gist.min.css">
+    <link rel="manifest" href="js/manifest.json">
+    <script src="js/main.js" defer></script>
   {{/head}}
 </head>
 
@@ -88,13 +104,15 @@
     </nav>
     <p>rxon's miniminimal tech blog</p>
   </header>
+
   {{#post}}
     <article>
       {{{contents}}}
     </article>
   {{/post}}
+
   {{#index}}
-    <nav>
+    <nav class="postlist">
       <ul>
         {{#list}}
           <li>
@@ -104,9 +122,21 @@
       </ul>
     </nav>
   {{/index}}
+
   <footer>
-    <aside></aside>
-    <address></address>
+    <aside>
+      <p>読む人と書く人に最高のUXを与えるためのfront-endだけでなくback-end、開発環境ともに超絶ミニマムな技術ブログです。<a href="https://github.com/rxon/note-2017">rxon/note-2017</a>でソースコードを公開しています。<span id="pushEnable"><a href="#pushEnable" id="pushEnableLink">Push通知を許可</a>すると、新着記事が受け取れます。</span></p>
+    </aside>
+    <address>
+      <p>Created and written by rxon</p>
+      <ul>
+        <li><a href="">Website</a></li><span> /</span>
+        <li><a href="">GitHub</a></li><span> /</span>
+        <li><a href="">Twitter</a></li><span> /</span>
+        <li><a href="">Hatebu</a></li><span> /</span>
+        <li><a href="">Annict</a></li>
+      </ul>
+    </address>
   </footer>
 </body>
 

@@ -1,0 +1,11 @@
+{
+  "name": "PushNotificationDemo",
+  "short_name": "PushNotificationDemo",
+  "icons": [{
+        "src": "ics_logo_512x512.png",
+        "sizes": "512x512"
+      }],
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "1074685061664"
+}
