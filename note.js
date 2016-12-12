@@ -13,13 +13,12 @@ const mustache = require('mustache-express');
 const app = express();
 const config = {
   mdDir: path.join(__dirname, '/post/'),
-  viewsDir: path.join(__dirname, '/views/'),
   staticDir: path.join(__dirname, '/public/')
 };
 
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
-app.set('views', config.viewsDir);
+app.set('views', __dirname);
 
 app.use(express.static(config.staticDir));
 
@@ -63,16 +62,19 @@ app.get('/', (req, res) => {
         .then(postInfo => {
           postsInfo.push(postInfo);
           if (i === mdFiles.length - 1) {
-            // postsInfoをdateでsort
-            res.render('layout', {
-              postList: postsInfo,
+            const sortedPostsInfo = _.sortBy(postsInfo, ['date', 'title']).reverse();
+            res.render('template', {
               head: {
                 title: '',
                 url: '',
                 description: '',
                 fbimg: 'hoge.jpg',
                 twimg: 'hoge.jpg',
-                twaccount: '@hogehoge'
+                twaccount: '@hogehoge',
+                icon: 'hoge.jpg'
+              },
+              index: {
+                list: sortedPostsInfo
               }
             });
           }
@@ -86,22 +88,27 @@ app.get('/:post.md', (req, res) => {
     name: req.params.post,
     ext: '.md'
   });
-  getPostInfo(file, true).then(postInfo => {
-    res.render('layout', {
-      postList: false,
-      head: {
-        title: postInfo.title,
-        url: postInfo.url,
-        description: postInfo.description,
-        fbimg: 'hoge.jpg',
-        twimg: 'hoge.jpg',
-        twaccount: '@hogehoge'
-      },
-      post: {
-        contents: postInfo.html
-      }
+  if (fs.statSync(config.mdDir + file).isFile()) {
+    getPostInfo(file, true).then(postInfo => {
+      res.render('template', {
+        head: {
+          title: postInfo.title,
+          url: postInfo.url,
+          description: postInfo.description,
+          fbimg: 'hoge.jpg',
+          twimg: 'hoge.jpg',
+          twaccount: '@hogehoge',
+          icon: 'hoge.jpg'
+        },
+        post: {
+          url: postInfo.url,
+          contents: postInfo.html
+        }
+      });
     });
-  });
+  } else {
+    throw err; // 404
+  }
 });
 
 if (!module.parent) {

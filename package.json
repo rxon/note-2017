@@ -12,6 +12,7 @@
     "start": "node note.js",
     "lint:js": "xo note.js",
     "lint:md": "shx find post/*.md | xargs textlint",
+    "lint": "npm run lint:md & npm run lint:js",
     "test": "",
     "deploy": ""
   },
