@@ -91,12 +91,12 @@ function subscribe() {
 
         return sendSubscriptionToServer(subscription);
       })
-      .catch(e => {
+      .catch(err => {
         if (Notification.permission === 'denied') {
           console.log('Permission for Notifications was denied');
           pushLink.disabled = true;
         } else {
-          console.log('Unable to subscribe to push.', e);
+          console.log('Unable to subscribe to push.', err);
           pushLink.disabled = false;
         }
       });
@@ -152,7 +152,7 @@ function endpointWorkaround(pushSubscription) {
 
 window.addEventListener('load', () => {
   pushLink.addEventListener('click', () => {
-      subscribe();
+    subscribe();
   });
 
   // ServiceWokerをサポートしているかチェック

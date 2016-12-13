@@ -7,10 +7,11 @@ const express = require('express');
 const hljs = require('highlight.js');
 const _ = require('lodash');
 const marked = require('marked');
+const morgan = require('morgan');
 // mustache-expressあんま使いたくない
 const mustache = require('mustache-express');
 
-const app = express();
+const app = module.exports = express();
 const config = {
   mdDir: path.join(__dirname, '/post/'),
   staticDir: path.join(__dirname, '/public/')
@@ -21,6 +22,7 @@ app.set('view engine', 'mustache');
 app.set('views', __dirname);
 
 app.use(express.static(config.staticDir));
+app.use(morgan('dev'));
 
 function getPostInfo(mdName, withHtml) {
   return new Promise((resolve, reject) => {
@@ -45,7 +47,7 @@ function getPostInfo(mdName, withHtml) {
         description: postDescription[0],
         date: postDate[0],
         url: mdName,
-        html: withHtml ? marked(md) : null
+        html: (withHtml) ? marked(md) : null
       });
     });
   });
@@ -65,9 +67,9 @@ app.get('/', (req, res) => {
             const sortedPostsInfo = _.sortBy(postsInfo, ['date', 'title']).reverse();
             res.render('template', {
               head: {
-                title: '',
+                title: 'note - rxon\'s miniminimal tech blog',
                 url: '',
-                description: '',
+                description: '読む人と書く人に最高のUXを与えるための超絶ミニマムな技術ブログ',
                 fbimg: 'hoge.jpg',
                 twimg: 'hoge.jpg',
                 twaccount: '@hogehoge',
@@ -88,27 +90,23 @@ app.get('/:post.md', (req, res) => {
     name: req.params.post,
     ext: '.md'
   });
-  if (fs.statSync(config.mdDir + file).isFile()) {
-    getPostInfo(file, true).then(postInfo => {
-      res.render('template', {
-        head: {
-          title: postInfo.title,
-          url: postInfo.url,
-          description: postInfo.description,
-          fbimg: 'hoge.jpg',
-          twimg: 'hoge.jpg',
-          twaccount: '@hogehoge',
-          icon: 'hoge.jpg'
-        },
-        post: {
-          url: postInfo.url,
-          contents: postInfo.html
-        }
-      });
+  getPostInfo(file, true).then(postInfo => {
+    res.render('template', {
+      head: {
+        title: postInfo.title,
+        url: postInfo.url,
+        description: postInfo.description,
+        fbimg: 'hoge.jpg',
+        twimg: 'hoge.jpg',
+        twaccount: '@hogehoge',
+        icon: 'hoge.jpg'
+      },
+      post: {
+        url: postInfo.url,
+        contents: postInfo.html
+      }
     });
-  } else {
-    throw err; // 404
-  }
+  });
 });
 
 if (!module.parent) {

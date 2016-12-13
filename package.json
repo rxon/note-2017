@@ -10,19 +10,21 @@
   },
   "scripts": {
     "start": "node note.js",
-    "lint:js": "xo",
-    "lint:md": "shx find post/*.md | xargs textlint",
     "lint": "npm run lint:md & npm run lint:js",
-    "test": "",
+    "lint:js": "xo note.js",
+    "lint:md": "shx find post/*.md | xargs textlint",
+    "test": "mocha -R nyan test/note.js",
     "deploy": ""
   },
   "xo": {
     "esnext": true,
-    "space": true,
-    "env": ["node", "browser"]
+    "space": true
   },
   "devDependencies": {
+    "mocha": "^3.2.0",
+    "rewire": "^2.5.2",
     "shx": "^0.2.1",
+    "supertest": "^2.0.1",
     "textlint": "^7.1.4",
     "textlint-rule-incremental-headers": "^0.2.0",
     "textlint-rule-ja-no-redundant-expression": "^1.0.1",
@@ -37,6 +39,7 @@
     "highlight.js": "^9.8.0",
     "lodash": "^4.17.2",
     "marked": "^0.3.6",
+    "morgan": "^1.7.0",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.4"
   }
