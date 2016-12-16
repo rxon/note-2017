@@ -28,7 +28,9 @@ describe('note.js', () => {
     it('render with vars and 200', done => {
       request(app)
         .get('/')
-        // vars
+        // .expect(function(res) {
+        //   res.body.head.title: 'note - rxon\'s miniminimal tech blog';
+        // })
         .expect(200, done);
     });
   });

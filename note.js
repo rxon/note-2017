@@ -67,13 +67,13 @@ app.get('/', (req, res) => {
             const sortedPostsInfo = _.sortBy(postsInfo, ['date', 'title']).reverse();
             res.render('template', {
               head: {
-                title: 'note - rxon\'s miniminimal tech blog',
-                url: '',
+                title: 'note - rxon\'s miniminimal tech blog - rxon.now.sh',
+                url: 'rxon.now.sh',
                 description: '読む人と書く人に最高のUXを与えるための超絶ミニマムな技術ブログ',
-                fbimg: 'hoge.jpg',
-                twimg: 'hoge.jpg',
-                twaccount: '@hogehoge',
-                icon: 'hoge.jpg'
+                fbimg: 'img/icon.png',
+                twimg: 'img/icon.png',
+                twaccount: '@rxon_',
+                icon: 'img/icon.png'
               },
               index: {
                 list: sortedPostsInfo
@@ -90,23 +90,27 @@ app.get('/:post.md', (req, res) => {
     name: req.params.post,
     ext: '.md'
   });
-  getPostInfo(file, true).then(postInfo => {
-    res.render('template', {
-      head: {
-        title: postInfo.title,
-        url: postInfo.url,
-        description: postInfo.description,
-        fbimg: 'hoge.jpg',
-        twimg: 'hoge.jpg',
-        twaccount: '@hogehoge',
-        icon: 'hoge.jpg'
-      },
-      post: {
-        url: postInfo.url,
-        contents: postInfo.html
-      }
+  if (!fs.statSync(config.mdDir + file).isFile()) {
+    res.send('404 NOT FOUND!!', 404);
+  } else if (fs.statSync(config.mdDir + file).isFile()) {
+    getPostInfo(file, true).then(postInfo => {
+      res.render('template', {
+        head: {
+          title: postInfo.title + ' | note - rxon.now.sh',
+          url: 'rxon.now.sh/' + postInfo.url,
+          description: postInfo.description,
+          fbimg: 'img/icon.png',
+          twimg: 'img/icon.png',
+          twaccount: '@rxon_',
+          icon: 'img/icon.png'
+        },
+        post: {
+          url: postInfo.url,
+          contents: postInfo.html
+        }
+      });
     });
-  });
+  }
 });
 
 if (!module.parent) {
