@@ -14,7 +14,7 @@
     "lint:js": "xo note.js",
     "lint:md": "shx find post/*.md | xargs textlint",
     "test": "mocha -R nyan test/note.js",
-    "deploy": ""
+    "deploy": "now"
   },
   "xo": {
     "esnext": true,
