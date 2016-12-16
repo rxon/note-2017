@@ -29,7 +29,7 @@
     <link href="{{{icon}}}" rel="apple-touch-icon">
     <style>
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Avenir Next', sans-serif;
         line-height: 2;
         overflow-x: hidden;
         max-width: 40em;
@@ -41,11 +41,15 @@
         text-rendering: optimizeLegibility;
       }
 
+      h2 {
+        margin-top: 3em;
+      }
+
       pre {
         font-size: .9em;
         line-height: 1.6em;
         overflow-x: auto;
-        width: 100%;
+        width: calc(100% - 2em);
         padding: 1em;
         white-space: pre;
         border-radius: 1em;
@@ -62,6 +66,10 @@
         padding: 0 1em;
         color: #777;
         border-left: .5em solid #ddd;
+      }
+
+      img {
+        width: 100%;
       }
 
       header,
@@ -125,12 +133,12 @@
 
   <footer>
     <aside>
-      <p>読む人と書く人に最高のUXを与えるためのfront-endだけでなくback-end、開発環境ともに超絶ミニマムな技術ブログです。<a href="https://github.com/rxon/note-2017">rxon/note-2017</a>でソースコードを公開しています。<span id="pushEnable"><a href="#pushEnable" id="pushEnableLink">Push通知を許可</a>すると、新着記事が受け取れます。</span></p>
+      <p>読む人と書く人に最高のUXを与えるためのfront-endだけでなくback-end、開発環境ともに超絶ミニマムな技術ブログです。<a href="https://github.com/rxon/note-2017">rxon/note-2017</a>でソースコードを公開しています。</p>
     </aside>
     <address>
       <p>Created and written by rxon</p>
       <ul>
-        <li><a href="https://rxon.github.io/">Website</a></li><span> /</span>
+        <li><!--<a href="https://rxon.github.io/">Website</a>-->Website[WIP]</li><span> /</span>
         <li><a href="https://github.com/rxon">GitHub</a></li><span> /</span>
         <li><a href="https://twitter.com/rxon_">Twitter</a></li><span> /</span>
         <li><a href="http://b.hatena.ne.jp/rxon/">Hatebu</a></li><span> /</span>

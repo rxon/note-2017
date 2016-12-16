@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-git clone <https://github.com/rxon/note-2017.git>
+git clone https://github.com/rxon/note-2017.git
 cd note-2017
 yarn install
 ```
@@ -30,4 +30,4 @@ MIT
 ## Author
 
 rxon  
-[Website](https://rxon.github.io/) / [GitHub](https://github.com/rxon) / [Twitter](https://twitter.com/rxon_)
+<!-- [Website](https://rxon.github.io/)  / -->[GitHub](https://github.com/rxon) / [Twitter](https://twitter.com/rxon_)
