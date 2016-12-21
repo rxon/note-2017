@@ -22,6 +22,6 @@
 
 その名も、[cross-platform-yu-gothic](https://www.npmjs.com/package/cross-platform-yu-gothic)。
 
-cross-platform-yu-gothicはnpmから`npm i -S cross-platform-yu-gothic`して、 [postcss/postcss-import](https://github.com/postcss/postcss-import)で読み込むこと環境を想定しているが、GitHubの[cross-platform-yu-gothic.css](https://raw.githubusercontent.com/rxon/cross-platform-yu-gothic/master/cross-platform-yu-gothic.css)から直接コピペしても使える。`font-family: cross-platform-yu-gothic, sans-serif;`と書けばプラットフォーム間の差異をかんたんに埋めることができる。
+cross-platform-yu-gothicはnpmから`npm i -S cross-platform-yu-gothic`して、 [postcss/postcss-import](https://github.com/postcss/postcss-import)で読み込むことを想定しているが、GitHubの[cross-platform-yu-gothic.css](https://raw.githubusercontent.com/rxon/cross-platform-yu-gothic/master/cross-platform-yu-gothic.css)から直接コピペしても使える。`font-family: cross-platform-yu-gothic, sans-serif;`と書けばプラットフォーム間の差異をかんたんに埋めることができる。
 
 良きタイポグラフィーライフを！

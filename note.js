@@ -12,6 +12,7 @@ const morgan = require('morgan');
 const mustache = require('mustache-express');
 
 const app = module.exports = express();
+const siteUrl = 'https://rxon.now.sh/';
 const config = {
   mdDir: path.join(__dirname, '/post/'),
   staticDir: path.join(__dirname, '/public/')
@@ -70,10 +71,10 @@ app.get('/', (req, res) => {
                 title: 'note - rxon\'s miniminimal tech blog - rxon.now.sh',
                 url: 'rxon.now.sh',
                 description: '読む人と書く人に最高のUXを与えるための超絶ミニマムな技術ブログ',
-                fbimg: '/img/icon.png',
-                twimg: '/img/icon.png',
+                fbimg: siteUrl + 'img/icon.png',
+                twimg: siteUrl + 'img/icon.png',
                 twaccount: '@rxon_',
-                icon: '/img/icon.png'
+                icon: siteUrl + 'img/icon.png'
               },
               index: {
                 list: sortedPostsInfo
@@ -99,10 +100,10 @@ app.get('/:post.md', (req, res) => {
           title: postInfo.title + ' | note - rxon.now.sh',
           url: 'rxon.now.sh/' + postInfo.url,
           description: postInfo.description,
-          fbimg: '/img/icon.png',
-          twimg: '/img/icon.png',
+          fbimg: siteUrl + 'img/icon.png',
+          twimg: siteUrl + 'img/icon.png',
           twaccount: '@rxon_',
-          icon: '/img/icon.png'
+          icon: siteUrl + 'img/icon.png'
         },
         post: {
           url: postInfo.url,

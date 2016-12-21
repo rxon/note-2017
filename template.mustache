@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="{{title}}">
     <meta name="twitter:description" content="{{description}}">
     <meta name="twitter:image" content="{{{twimg}}}">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="{{{twaccount}}}">
     <link href="{{{icon}}}" rel="shortcut icon">
     <link href="{{{icon}}}" rel="image_src">
@@ -97,9 +97,18 @@
         display: inline-block;
       }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/github-gist.min.css">
+    <style>.hljs{display:block;background:white;padding:0.5em;color:#333333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-string,.hljs-variable,.hljs-template-variable,.hljs-strong,.hljs-emphasis,.hljs-quote{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-literal,.hljs-symbol,.hljs-bullet,.hljs-attribute{color:#0086b3}.hljs-section,.hljs-name{color:#63a35c}.hljs-tag{color:#333333}.hljs-title,.hljs-attr,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}</style>
     <link rel="manifest" href="js/manifest.json">
     <script src="js/main.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-65643430-6', 'auto');
+      ga('send', 'pageview');
+    </script>
   {{/head}}
 </head>
 
@@ -142,7 +151,7 @@
         <li><a href="https://github.com/rxon">GitHub</a></li><span> /</span>
         <li><a href="https://twitter.com/rxon_">Twitter</a></li><span> /</span>
         <li><a href="http://b.hatena.ne.jp/rxon/">Hatebu</a></li><span> /</span>
-        <li><a href="https://annict.com/@racionJS">Annict</a></li>
+        <li><a href="https://annict.com/@rxon">Annict</a></li>
       </ul>
     </address>
   </footer>
