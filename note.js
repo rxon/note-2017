@@ -106,6 +106,7 @@ app.get('/:post.md', (req, res) => {
           icon: siteUrl + 'img/icon.png'
         },
         post: {
+          title: postInfo.title,
           url: postInfo.url,
           contents: postInfo.html
         }
