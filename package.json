@@ -12,7 +12,7 @@
     "start": "node note.js",
     "lint": "npm run lint:md & npm run lint:js",
     "lint:js": "xo note.js",
-    "lint:md": "shx find post/*.md | xargs textlint",
+    "lint:md": "shx find post/*.md | xargs textlint --cache post/",
     "test": "mocha -R nyan test/note.js",
     "deploy": "now"
   },
