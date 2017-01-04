@@ -8,8 +8,7 @@ const hljs = require('highlight.js');
 const _ = require('lodash');
 const marked = require('marked');
 const morgan = require('morgan');
-// mustache-expressあんま使いたくない
-const mustache = require('mustache-express');
+const mustache = require('mustache');
 
 const app = module.exports = express();
 const siteUrl = 'https://rxon.now.sh/';
@@ -18,7 +17,16 @@ const config = {
   staticDir: path.join(__dirname, '/public/')
 };
 
-app.engine('mustache', mustache());
+app.engine('mustache', (filePath, options, callback) => {
+  fs.readFile(filePath, 'utf-8', (err, content) => {
+    if (err) {
+      return callback(new Error(err));
+    }
+    const rendered = mustache.render(content, options);
+    return callback(null, rendered);
+  });
+});
+
 app.set('view engine', 'mustache');
 app.set('views', __dirname);
 
