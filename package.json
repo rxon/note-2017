@@ -9,11 +9,11 @@
     "url": "rxon.github.io"
   },
   "scripts": {
-    "start": "node note.js",
+    "start": "node --harmony-async-await note.js",
     "lint": "npm run lint:md & npm run lint:js",
     "lint:js": "xo note.js",
     "lint:md": "shx find post/*.md | xargs textlint --cache post/",
-    "test": "mocha -R nyan test/note.js",
+    "test": "mocha -R --harmony nyan test/note.js",
     "deploy": "now"
   },
   "xo": {
@@ -40,6 +40,7 @@
     "lodash": "^4.17.2",
     "marked": "^0.3.6",
     "morgan": "^1.7.0",
-    "mustache": "^2.3.0"
+    "mustache": "^2.3.0",
+    "mz": "^2.6.0"
   }
 }

@@ -38,8 +38,8 @@ ajv-keywords@^1.0.0:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.0.tgz#c11e6859eafff83e0dafc416929472eca946aa2c"
 
 ajv@^4.7.0:
-  version "4.10.3"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.10.3.tgz#3e4fea9675b157de7888b80dd0ed735b83f28e11"
+  version "4.10.4"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.10.4.tgz#c0974dd00b3464984892d6010aa9c2c945933254"
   dependencies:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
@@ -104,12 +104,16 @@ ansi-escapes@^1.1.0, ansi-escapes@^1.4.0:
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
 
 ansi-regex@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.0.0.tgz#c5061b6e0ef8a81775e50f5d66151bf6bf371107"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
 
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
+
+any-promise@^1.0.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
 
 argparse@^1.0.7:
   version "1.0.9"
@@ -160,10 +164,6 @@ async@^2.0.1:
   resolved "https://registry.yarnpkg.com/async/-/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
   dependencies:
     lodash "^4.14.0"
-
-async@~0.2.10:
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
 
 babel-code-frame@^6.16.0:
   version "6.20.0"
@@ -736,8 +736,8 @@ eslint-plugin-unicorn@^1.0.0:
     req-all "^0.1.0"
 
 eslint@^3.6.0:
-  version "3.12.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.12.2.tgz#6be5a9aa29658252abd7f91e9132bab1f26f3c34"
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.13.1.tgz#564d2646b5efded85df96985332edd91a23bff25"
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
@@ -769,7 +769,7 @@ eslint@^3.6.0:
     require-uncached "^1.0.2"
     shelljs "^0.7.5"
     strip-bom "^3.0.0"
-    strip-json-comments "~1.0.1"
+    strip-json-comments "~2.0.1"
     table "^3.7.8"
     text-table "~0.2.0"
     user-home "^2.0.0"
@@ -828,13 +828,14 @@ event-emitter@~0.3.4:
     es5-ext "~0.10.7"
 
 execa@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.5.0.tgz#a57456764b990e3e52f6eff7f17a9cc2ff2e7ccc"
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.5.1.tgz#de3fb85cb8d6e91c85bcbceb164581785cb57b36"
   dependencies:
     cross-spawn "^4.0.0"
     get-stream "^2.2.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
@@ -948,8 +949,8 @@ form-data@1.0.0-rc4:
     mime-types "^2.1.10"
 
 formidable@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.0.17.tgz#ef5491490f9433b705faa77249c99029ae348559"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.1.1.tgz#96b8886f7c3c3508b932d6bd70c4d3a88f35f1a9"
 
 forwarded@~0.1.0:
   version "0.1.0"
@@ -1052,7 +1053,7 @@ got@^5.0.0:
     unzip-response "^1.0.2"
     url-parse-lax "^1.0.0"
 
-graceful-fs@^4.1.2:
+graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
@@ -1159,9 +1160,9 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-ipaddr.js@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.1.1.tgz#c791d95f52b29c1247d5df80ada39b8a73647230"
+ipaddr.js@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
 
 irregular-plurals@^1.0.0:
   version "1.2.0"
@@ -1517,8 +1518,8 @@ lodash.upperfirst@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
 
 lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.3.0:
-  version "4.17.3"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.3.tgz#557ed7d2a9438cac5fd5a43043ca60cb455e01f7"
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 log-symbols@^1.0.2:
   version "1.0.2"
@@ -1547,10 +1548,6 @@ lru-cache@^4.0.1:
   dependencies:
     pseudomap "^1.0.1"
     yallist "^2.0.0"
-
-lru-cache@~2.5.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.5.2.tgz#1fddad938aae1263ce138680be1b3f591c0ab41c"
 
 map-like@^1.0.1:
   version "1.0.3"
@@ -1622,15 +1619,15 @@ methods@1.x, methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-mime-db@~1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.25.0.tgz#c18dbd7c73a5dbf6f44a024dc0d165a1e7b1c392"
+mime-db@~1.26.0:
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.26.0.tgz#eaffcd0e4fc6935cf8134da246e2e6c35305adff"
 
 mime-types@^2.1.10, mime-types@~2.1.11, mime-types@~2.1.13:
-  version "2.1.13"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.13.tgz#e07aaa9c6c6b9a7ca3012c69003ad25a39e92a88"
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.14.tgz#f7ef7d97583fcaf3b7d282b6f8b5679dab1e94ee"
   dependencies:
-    mime-db "~1.25.0"
+    mime-db "~1.26.0"
 
 mime@1.3.4, mime@^1.3.4:
   version "1.3.4"
@@ -1711,21 +1708,21 @@ multimatch@^2.1.0:
     arrify "^1.0.0"
     minimatch "^3.0.0"
 
-mustache-express@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/mustache-express/-/mustache-express-1.2.4.tgz#4cbc876367b676cf8b7020921781c6a1912bf1ab"
-  dependencies:
-    async "~0.2.10"
-    lru-cache "~2.5.0"
-    mustache "~2.3.0"
-
-mustache@^2.3.0, mustache@~2.3.0:
+mustache@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.3.0.tgz#4028f7778b17708a489930a6e52ac3bca0da41d0"
 
 mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
+
+mz@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/mz/-/mz-2.6.0.tgz#c8b8521d958df0a4f2768025db69c719ee4ef1ce"
+  dependencies:
+    any-promise "^1.0.0"
+    object-assign "^4.0.1"
+    thenify-all "^1.0.0"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -1774,8 +1771,8 @@ object-assign@^3.0.0:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
 object-assign@^4.0.1, object-assign@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
 object-keys@^1.0.10, object-keys@^1.0.8:
   version "1.0.11"
@@ -1834,6 +1831,10 @@ osenv@^0.1.0:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
+
+p-finally@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
 
 p-limit@^1.1.0:
   version "1.1.0"
@@ -1998,23 +1999,19 @@ proto-props@^0.2.0:
   resolved "https://registry.yarnpkg.com/proto-props/-/proto-props-0.2.1.tgz#5e01dc2675a0de9abfa76e799dfa334d6f483f4b"
 
 proxy-addr@~1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.2.tgz#b4cc5f22610d9535824c123aef9d3cf73c40ba37"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.3.tgz#dc97502f5722e888467b3fa2297a7b1ff47df074"
   dependencies:
     forwarded "~0.1.0"
-    ipaddr.js "1.1.1"
+    ipaddr.js "1.2.0"
 
 pseudomap@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
-qs@6.2.0:
+qs@6.2.0, qs@^6.1.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
-
-qs@^6.1.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 range-parser@~1.2.0:
   version "1.2.0"
@@ -2269,9 +2266,9 @@ sentence-splitter@^1.2.0:
   dependencies:
     structured-source "^3.0.2"
 
-sentence-splitter@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/sentence-splitter/-/sentence-splitter-2.1.1.tgz#cf8b8d9795c29d4560b22e155524000bc5c3f252"
+sentence-splitter@^2.0.0, sentence-splitter@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/sentence-splitter/-/sentence-splitter-2.2.0.tgz#a9964463473ea7d263aece50b96b90f177a9ebc9"
   dependencies:
     concat-stream "^1.5.2"
     structured-source "^3.0.2"
@@ -2290,16 +2287,16 @@ setprototypeof@1.0.2:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.2.tgz#81a552141ec104b88e89ce383103ad5c66564d08"
 
 shelljs@^0.7.3, shelljs@^0.7.5:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.5.tgz#2eef7a50a21e1ccf37da00df767ec69e30ad0675"
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.6.tgz#379cccfb56b91c8601e4793356eb5382924de9ad"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
 shx@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/shx/-/shx-0.2.1.tgz#d5f8c536e77e6b6ec83bd66f746ab300f1775ecf"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/shx/-/shx-0.2.2.tgz#0a304d020b0edf1306ad81570e80f0346df58a39"
   dependencies:
     es6-object-assign "^1.0.3"
     minimist "^1.2.0"
@@ -2428,9 +2425,13 @@ strip-indent@^1.0.1:
   dependencies:
     get-stdin "^4.0.1"
 
-strip-json-comments@^1.0.4, strip-json-comments@~1.0.1, strip-json-comments@~1.0.4:
+strip-json-comments@^1.0.4, strip-json-comments@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-1.0.4.tgz#1e15fbcac97d3ee99bf2d73b4c656b082bbafb91"
+
+strip-json-comments@~2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
 structured-source@^3.0.2:
   version "3.0.2"
@@ -2482,8 +2483,8 @@ table@^3.7.8:
     string-width "^2.0.0"
 
 technical-word-rules@^1.4.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/technical-word-rules/-/technical-word-rules-1.9.2.tgz#c38e5e535b7e44d6c635f303302cb9444add7e7f"
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/technical-word-rules/-/technical-word-rules-1.9.3.tgz#40b1c286e1305ed798fdc831369a3ee7fb725542"
 
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
@@ -2520,7 +2521,7 @@ textlint-plugin-text@^1.0.1:
   dependencies:
     txt-to-ast "^1.0.2"
 
-textlint-rule-helper@^1.1.2, textlint-rule-helper@^1.1.3, textlint-rule-helper@^1.1.4, textlint-rule-helper@^1.1.5, textlint-rule-helper@^1.2.0:
+textlint-rule-helper@^1.1.2, textlint-rule-helper@^1.1.3, textlint-rule-helper@^1.1.4, textlint-rule-helper@^1.1.5:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/textlint-rule-helper/-/textlint-rule-helper-1.2.0.tgz#be68d47a5146b16dd116278c9aeb7bd35631ccda"
   dependencies:
@@ -2537,36 +2538,36 @@ textlint-rule-incremental-headers@^0.2.0:
   resolved "https://registry.yarnpkg.com/textlint-rule-incremental-headers/-/textlint-rule-incremental-headers-0.2.0.tgz#ab056713b60acdb8ebf2a2726425e67b01ad9b2c"
 
 textlint-rule-ja-no-abusage@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-abusage/-/textlint-rule-ja-no-abusage-1.2.0.tgz#239d6b7cce86ac139032db0eb369bf3a2287cb04"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-abusage/-/textlint-rule-ja-no-abusage-1.2.1.tgz#4faad660b0abe1fc05e87528f804cf22b7c73a78"
   dependencies:
     kuromojin "^1.3.1"
     morpheme-match "^1.0.1"
     textlint-rule-prh "^3.1.1"
 
 textlint-rule-ja-no-mixed-period@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-mixed-period/-/textlint-rule-ja-no-mixed-period-1.0.2.tgz#6033b97217883aa690f29edee349f981b8c6818c"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-mixed-period/-/textlint-rule-ja-no-mixed-period-1.0.3.tgz#74e0d32267f47b752e9f4c8228bbc0375df516d3"
   dependencies:
     textlint-rule-helper "^2.0.0"
 
 textlint-rule-ja-no-redundant-expression@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-redundant-expression/-/textlint-rule-ja-no-redundant-expression-1.0.2.tgz#35ddf5e64b92321e92eac7bb16b02b2775026e2d"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-redundant-expression/-/textlint-rule-ja-no-redundant-expression-1.0.3.tgz#08b4146b99f756d8c0ec56bd3b7111425a3f0d8c"
   dependencies:
     kuromojin "^1.3.2"
     morpheme-match "^1.0.1"
     morpheme-match-all "^1.1.0"
 
 textlint-rule-ja-no-successive-word@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-successive-word/-/textlint-rule-ja-no-successive-word-1.0.1.tgz#a718f7a73a1ff65527b17b203f69bee301635353"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-successive-word/-/textlint-rule-ja-no-successive-word-1.0.2.tgz#e06ce4e2a23945c219c770ce6805498bb54ede81"
   dependencies:
     kuromojin "^1.3.1"
 
 textlint-rule-ja-no-weak-phrase@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-weak-phrase/-/textlint-rule-ja-no-weak-phrase-1.0.2.tgz#6b96509086df8258df54adae912dc0f7eb151661"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-weak-phrase/-/textlint-rule-ja-no-weak-phrase-1.0.3.tgz#8cc1c2b643e0b0be00225c9b2ff440bf423aeac7"
   dependencies:
     kuromojin "^1.3.1"
     morpheme-match "^1.0.1"
@@ -2579,20 +2580,20 @@ textlint-rule-max-comma@^1.0.2:
     unist-util-filter "^0.2.1"
 
 textlint-rule-max-kanji-continuous-len@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-max-kanji-continuous-len/-/textlint-rule-max-kanji-continuous-len-1.1.0.tgz#9745313906e0dfac965bd8a3182058dbbea52de4"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/textlint-rule-max-kanji-continuous-len/-/textlint-rule-max-kanji-continuous-len-1.1.1.tgz#cbcc44488c06d36c65099e12f7977e3a15c3b77f"
   dependencies:
     match-index "^1.0.1"
     textlint-rule-helper "^2.0.0"
 
 textlint-rule-max-ten@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/textlint-rule-max-ten/-/textlint-rule-max-ten-2.0.1.tgz#ede6364843d2fc500b9c5cffab1431f911836d91"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-max-ten/-/textlint-rule-max-ten-2.0.3.tgz#dccbc0d0157ee86a7572ca00a47ab1fa577f0645"
   dependencies:
     kuromojin "^1.0.2"
-    sentence-splitter "^1.2.0"
+    sentence-splitter "^2.0.0"
     structured-source "^3.0.2"
-    textlint-rule-helper "^1.1.3"
+    textlint-rule-helper "^2.0.0"
 
 textlint-rule-no-dead-link@^3.0.1:
   version "3.0.1"
@@ -2602,8 +2603,8 @@ textlint-rule-no-dead-link@^3.0.1:
     textlint-rule-helper "^2.0.0"
 
 textlint-rule-no-double-negative-ja@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-double-negative-ja/-/textlint-rule-no-double-negative-ja-1.0.4.tgz#1ca7673af6034a345ee3d95af61104f6c296a251"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-double-negative-ja/-/textlint-rule-no-double-negative-ja-1.0.5.tgz#ba30db424dc7ef84ceda6d103781b14cd20cc764"
   dependencies:
     kuromojin "^1.1.0"
 
@@ -2626,17 +2627,17 @@ textlint-rule-no-doubled-conjunctive-particle-ga@^1.0.2:
     textlint-util-to-string "^1.2.0"
 
 textlint-rule-no-doubled-joshi@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-doubled-joshi/-/textlint-rule-no-doubled-joshi-3.3.0.tgz#01a227af3ec87e20bd6035380e87c17ea5d3659a"
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-doubled-joshi/-/textlint-rule-no-doubled-joshi-3.4.0.tgz#f20ab04209f9f432279396d7f1980f2e2cb9d656"
   dependencies:
     kuromojin "^1.2.1"
-    sentence-splitter "^2.0.0"
+    sentence-splitter "^2.2.0"
     textlint-rule-helper "^1.1.4"
     textlint-util-to-string "^1.1.0"
 
 textlint-rule-no-dropping-the-ra@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-dropping-the-ra/-/textlint-rule-no-dropping-the-ra-1.1.0.tgz#5449833e39b5ef28410640b3652db0fc500eb28f"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-dropping-the-ra/-/textlint-rule-no-dropping-the-ra-1.1.1.tgz#4cc6af37eb97ac0cdd81baeb259c4ca24a7f7b45"
   dependencies:
     kuromojin "^1.2.1"
     textlint-rule-helper "^1.1.4"
@@ -2649,18 +2650,18 @@ textlint-rule-no-exclamation-question-mark@^1.0.2:
     textlint-rule-helper "^1.1.5"
 
 textlint-rule-no-hankaku-kana@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-hankaku-kana/-/textlint-rule-no-hankaku-kana-1.0.1.tgz#40b400c03249eba9e57a16d8b1233d1065606c69"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-hankaku-kana/-/textlint-rule-no-hankaku-kana-1.0.2.tgz#6d3a936b18cd7021ebffca8d4111181dc159f4c8"
   dependencies:
     match-index "^1.0.1"
     textlint-rule-helper "^1.1.5"
 
 textlint-rule-no-mix-dearu-desumasu@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-mix-dearu-desumasu/-/textlint-rule-no-mix-dearu-desumasu-3.0.2.tgz#bc40ab55e48ee0059aa2767344f68ea7ef406e40"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-mix-dearu-desumasu/-/textlint-rule-no-mix-dearu-desumasu-3.0.3.tgz#ac4b8160b4f46644a4a40d62fe01d8db7670b7c3"
   dependencies:
     analyze-desumasu-dearu "^3.1.0"
-    textlint-rule-helper "^1.2.0"
+    textlint-rule-helper "^2.0.0"
     unist-util-visit "^1.1.0"
 
 textlint-rule-no-nfd@^1.0.1:
@@ -2708,21 +2709,20 @@ textlint-rule-preset-jtf-style@2.2.3, textlint-rule-preset-jtf-style@^2.2.1:
     textlint-rule-prh "^3.0.1"
 
 textlint-rule-prh@^3.0.1, textlint-rule-prh@^3.1.1:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-prh/-/textlint-rule-prh-3.1.2.tgz#1296ae7b15b9f7e9c2c5e994e15c02b2a3b8746f"
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-prh/-/textlint-rule-prh-3.1.3.tgz#0bd87537dd15c884dcffdeef0afcf9147cb30fc6"
   dependencies:
     prh "^1.0.1"
-    structured-source "^3.0.2"
     textlint-rule-helper "^2.0.0"
     untildify "^3.0.2"
 
 textlint-rule-sentence-length@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/textlint-rule-sentence-length/-/textlint-rule-sentence-length-1.0.7.tgz#463d9f7cafc560f71139801d80e60efdb0afef55"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/textlint-rule-sentence-length/-/textlint-rule-sentence-length-1.1.0.tgz#8da78fd80a7e432fa3caf0c94b6379151fec6c06"
   dependencies:
     mdast-util-to-string "^1.0.0"
     sentence-splitter "^2.0.0"
-    textlint-rule-helper "^1.1.4"
+    textlint-rule-helper "^2.0.0"
 
 textlint-rule-spellcheck-tech-word@5.0.0:
   version "5.0.0"
@@ -2774,6 +2774,18 @@ textlint@^7.1.4:
 the-argv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/the-argv/-/the-argv-1.0.0.tgz#0084705005730dd84db755253c931ae398db9522"
+
+thenify-all@^1.0.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/thenify-all/-/thenify-all-1.6.0.tgz#1a1918d402d8fc3f98fbf234db0bcc8cc10e9726"
+  dependencies:
+    thenify ">= 3.1.0 < 4"
+
+"thenify@>= 3.1.0 < 4":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/thenify/-/thenify-3.2.1.tgz#251fd1c80aff6e5cf57cb179ab1fcb724269bd11"
+  dependencies:
+    any-promise "^1.0.0"
 
 through@^2.3.6:
   version "2.3.8"
@@ -2976,10 +2988,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
 write-file-atomic@^1.1.2:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-1.2.0.tgz#14c66d4e4cb3ca0565c28cf3b7a6f3e4d5938fab"
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-1.3.1.tgz#7d45ba32316328dd1ec7d90f60ebc0d845bb759a"
   dependencies:
-    graceful-fs "^4.1.2"
+    graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
     slide "^1.1.5"
 
