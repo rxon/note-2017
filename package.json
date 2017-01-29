@@ -1,5 +1,5 @@
 {
-  "name": "rxon",
+  "name": "note-2017",
   "version": "0.1.0",
   "description": "rxon's miniminimal blog",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "lint:js": "xo note.js",
     "lint:md": "shx find post/*.md | xargs textlint --cache post/",
     "test": "mocha -R --harmony nyan test/note.js",
-    "deploy": "now"
+    "deploy": "now --alias"
   },
   "xo": {
     "esnext": true,
