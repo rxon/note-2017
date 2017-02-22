@@ -3,6 +3,7 @@
 const path = require('path');
 
 const express = require('express');
+const helmet = require('helmet');
 const hljs = require('highlight.js');
 const _ = require('lodash');
 const marked = require('marked');
@@ -32,6 +33,7 @@ app.set('views', __dirname);
 
 app.use(express.static(config.staticDir));
 app.use(morgan('dev'));
+app.use(helmet());
 
 function getPostInfo(mdName, withHtml) {
   return new Promise((resolve, reject) => {

@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "express": "^4.14.1",
+    "helmet": "^3.4.0",
     "highlight.js": "^9.9.0",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
