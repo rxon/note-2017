@@ -24,7 +24,7 @@
     "mocha": "^3.2.0",
     "rewire": "^2.5.2",
     "shx": "^0.2.1",
-    "supertest": "^2.0.1",
+    "supertest": "^3.0.0",
     "textlint": "^7.1.4",
     "textlint-rule-incremental-headers": "^0.2.0",
     "textlint-rule-ja-no-redundant-expression": "^1.0.1",
@@ -35,11 +35,11 @@
     "xo": "0.17.1"
   },
   "dependencies": {
-    "express": "^4.14.0",
-    "highlight.js": "^9.8.0",
-    "lodash": "^4.17.2",
+    "express": "^4.14.1",
+    "highlight.js": "^9.9.0",
+    "lodash": "^4.17.4",
     "marked": "^0.3.6",
-    "morgan": "^1.7.0",
+    "morgan": "^1.8.1",
     "mustache": "^2.3.0",
     "mz": "^2.6.0"
   }

@@ -8,7 +8,7 @@
 
 ## extract-text-webpack-plugin
 
-webpackではモジュールとして読み込んだCSSを`<head>`にをあとからjsで流し込むという方式を取っているが、performanceの面であんまりよろしくない気がしたので外部ファイル化する [webpack/extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin)を使用した。
+webpackではモジュールとして読み込んだCSSを`<head>`にをあとからjsで流し込むという方式を取っているが、performanceの面であんまりよろしくない気がしたので外部ファイル化する [webpack/extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)を使用した。
 
 ```javascript
 module: {
