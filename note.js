@@ -67,9 +67,8 @@ function getPostInfo(mdName, withHtml) {
 app.get('/', (req, res) => {
   async function sortedPostsInfo() {
     const mdFiles = await fs.readdir(config.mdDir);
-    const postsInfo = await Promise.all(mdFiles.map(mdFile => {
-      return getPostInfo(mdFile, false);
-    }));
+    const postInfo = mdFiles.map(mdFile => getPostInfo(mdFile, false));
+    const postsInfo = await Promise.all(postInfo);
 
     return _.sortBy(postsInfo, ['date', 'title']).reverse();
   }
