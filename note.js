@@ -15,7 +15,8 @@ const app = module.exports = express();
 const siteUrl = 'https://rxon.now.sh/';
 const config = {
   mdDir: path.join(__dirname, '/post/'),
-  staticDir: path.join(__dirname, '/public/')
+  staticDir: path.join(__dirname, '/public/'),
+  iconPath: siteUrl + 'img/icon.png'
 };
 
 app.engine('mustache', (filePath, options, callback) => {
@@ -79,10 +80,10 @@ app.get('/', (req, res) => {
         title: 'note - rxon\'s miniminimal tech blog - rxon.now.sh',
         url: 'rxon.now.sh',
         description: '読む人と書く人に最高のUXを与えるための超絶ミニマムな技術ブログ',
-        fbimg: siteUrl + 'img/icon.png',
-        twimg: siteUrl + 'img/icon.png',
+        fbimg: config.iconPath,
+        twimg: config.iconPath,
         twaccount: '@rxon_',
-        icon: siteUrl + 'img/icon.png'
+        icon: config.iconPath
       },
       index: {
         list: sortedPostsInfo
@@ -111,10 +112,10 @@ app.get('/:post.md', (req, res) => {
         title: postInfo.title + ' | note - rxon.now.sh',
         url: 'rxon.now.sh/' + postInfo.url,
         description: postInfo.description,
-        fbimg: siteUrl + 'img/icon.png',
-        twimg: siteUrl + 'img/icon.png',
+        fbimg: config.iconPath,
+        twimg: config.iconPath,
         twaccount: '@rxon_',
-        icon: siteUrl + 'img/icon.png'
+        icon: config.iconPath
       },
       post: {
         title: postInfo.title,
