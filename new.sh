@@ -10,5 +10,5 @@ cat <<EOF > post/$1.md
 
 > $3
 
-##
+$4
 EOF
