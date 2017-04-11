@@ -9,7 +9,7 @@
     "url": "rxon.github.io"
   },
   "scripts": {
-    "start": "node --harmony-async-await note.js",
+    "start": "node note.js",
     "lint": "npm run lint:md & npm run lint:js",
     "lint:js": "xo note.js",
     "lint:md": "shx find post/*.md | xargs textlint --cache post/",
