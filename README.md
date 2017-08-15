@@ -17,8 +17,8 @@ Available commands.
 ```bash
 npm start       //Listen server
 npm run lint    //Lint JS and md
-npm run lint:js //Lint md
-npm run lint:md //Lint JS
+npm run lint:js //Lint JS
+npm run lint:md //Lint md
 npm test        //Test server
 npm run deploy  //Deploy with now
 ```
