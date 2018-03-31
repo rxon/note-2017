@@ -65,16 +65,16 @@ function getPostInfo(mdName, withHtml) {
   });
 }
 
+async function sortedPostsInfo(withHtml) {
+  const mdFiles = await fs.readdir(config.mdDir);
+  const postInfo = mdFiles.map(mdFile => getPostInfo(mdFile, withHtml));
+  const postsInfo = await Promise.all(postInfo);
+
+  return _.sortBy(postsInfo, ['date', 'title']).reverse();
+}
+
 app.get('/', (req, res) => {
-  async function sortedPostsInfo() {
-    const mdFiles = await fs.readdir(config.mdDir);
-    const postInfo = mdFiles.map(mdFile => getPostInfo(mdFile, false));
-    const postsInfo = await Promise.all(postInfo);
-
-    return _.sortBy(postsInfo, ['date', 'title']).reverse();
-  }
-
-  sortedPostsInfo().then(sortedPostsInfo => {
+  sortedPostsInfo(false).then(sortedPostsInfo => {
     res.render('template', {
       head: {
         title: 'note - rxon\'s miniminimal tech blog - rxon.now.sh',
@@ -123,6 +123,12 @@ app.get('/:post.md', (req, res) => {
         contents: postInfo.html
       }
     });
+  });
+});
+
+app.get('/api', (req, res) => {
+  sortedPostsInfo(true).then(sortedPostsInfo => {
+    res.json(sortedPostsInfo);
   });
 });
 

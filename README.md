@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/rxon/note-2017.git
 cd note-2017
-yarn install
+npm i
 ```
 
 ## Usage
