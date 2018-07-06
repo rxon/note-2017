@@ -66,7 +66,10 @@ function getPostInfo(mdName, withHtml) {
 }
 
 async function sortedPostsInfo(withHtml) {
-  const mdFiles = await fs.readdir(config.mdDir);
+  const files = await fs.readdir(config.mdDir);
+  const mdFiles = _.filter(files, file => {
+    return path.extname(file) === '.md';
+  });
   const postInfo = mdFiles.map(mdFile => getPostInfo(mdFile, withHtml));
   const postsInfo = await Promise.all(postInfo);
 
